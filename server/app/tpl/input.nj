@@ -1,0 +1,10 @@
+<div class="page-row {{ key }}">
+    <div class="cys-form-label">{{ label }}</div>
+    <div class="cys-form-content">
+      <cys-input
+        :placeholder="{{key}}.placeholder"
+        v-model="{{key}}.value"
+        :clearable="{{key}}.clearable">
+      </cys-input>
+    </div>
+</div>

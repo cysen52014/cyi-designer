@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="/manifest.json" />
+  <title>Vue CLI4 SSR</title>
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:7001/public/css/cysui.css" />
+  <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+  <!--vue-ssr-outlet-->
+  <div id="app"></div>
+  {{ run }}
+</body>
+</html>

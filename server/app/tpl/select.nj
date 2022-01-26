@@ -1,0 +1,13 @@
+<div class="page-row {{ key }}">
+    <div class="cys-form-label">{{ label }}</div>
+    <div class="cys-form-content">
+      <cys-select v-model="{{key}}.value" :placeholder="{{key}}.placeholder" :clearable="{{key}}.clearable">
+        <cys-option
+        v-for="(item,i) in {{key}}.options"
+        :key="i"
+        :label="item[{{key}}.optionLabel]"
+        :value="item[{{key}}.optionValue]">
+        </cys-option>
+      </cys-select>
+    </div>
+</div>

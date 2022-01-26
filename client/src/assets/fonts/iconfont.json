@@ -1,0 +1,37 @@
+{
+  "id": "2703539",
+  "name": "cyi",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6820875",
+      "name": "创建",
+      "font_class": "chuangjian",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "13160332",
+      "name": "弹窗",
+      "font_class": "danchuang2",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "20104477",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "3951329",
+      "name": "弹窗",
+      "font_class": "danchuang",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    }
+  ]
+}

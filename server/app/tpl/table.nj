@@ -1,0 +1,17 @@
+<div class="page-table-wrap {{ key }}">
+  <cys-table ref="{{ key }}" :options="{{ key }}.options" :striped="true" :border="true"
+    >
+    {% for item in o.options.thead.column %}{% if (item.slotName) %}<span :slot="{{item.slotName}}" slot-scope="scope">{% else %}<span slot-scope="scope">{% endif %}{% if (item.FUT) and (item.FUT === 1) %}
+        {% raw %} {{ scope.row['{% endraw %}{{item.prop}}{% raw %}'] | {% endraw %}{{item.FUM}}{% raw %} }}  {% endraw %}
+      </span>
+      {% elif (item.FUT) and (item.FUT === 2) %}
+        {% raw %} {{item.FUM}} {% endraw %}
+      </span>
+      {% else %}
+        {% raw %} {{ scope.row['{% endraw %}{{item.prop}}{% raw %}'] }} {% endraw %}
+      </span>
+      {% endif %}
+    {%- endfor %}
+    </cys-table
+  >
+  </div>

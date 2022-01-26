@@ -1,0 +1,8 @@
+<div class="page-seach-wrap {{ key }}">
+   <cys-form-search
+      :data="{{key}}.list"
+      :btns="{{key}}.btns"
+      :direction="{{key}}.direction"
+      :pointer="{{key}}.pointer"
+    ></cys-form-search>
+</div>

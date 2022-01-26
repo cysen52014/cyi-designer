@@ -1,0 +1,13 @@
+<div class="page-row {{ key }}">
+    <div class="cys-form-label">{{ label }}</div>
+    <div class="cys-form-content">
+      <cys-cascader
+        v-model="{{key}}.value"
+        :options="{{key}}.options"
+        :clearable="true"
+        :filter="true"
+        :props="{ checkStrictly: {{ checkStrictly }}, label: '{{ optionLabel }}', value: '{{ optionValue }}' }"
+        placeholder="请选择"
+      ></cys-cascader>
+    </div>
+</div>

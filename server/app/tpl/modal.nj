@@ -1,0 +1,45 @@
+ <cys-modal
+    title="{{key}}.label"
+    v-model="{{key}}.visible">
+    <cys-form
+      ref="modal-form"
+      v-model="{{key}}.options"
+      :label-width="'80px'"
+    >
+    {% for item in o.options %}{% if item.verify %}{% if item.verifyFunc %}<cys-form-item
+          :label="{{ item.label }}"
+          :label-width="'80px'"
+          :prop="'{{key}}.options.{{ loop.index - 1 }}.value'"
+          :rules="[{ required: true, validator: {{item.verifyFunc}}, trigger: 'blur, change' }]"> 
+          {% else  %}<cys-form-item
+          :label="{{ item.label }}"
+          :label-width="'80px'"
+          :prop="'{{key}}.options.{{ loop.index - 1 }}.value'"
+          :rules="[{ required: true, message: '{{item.label}}不能为空', trigger: 'blur, change' }]"> 
+          {% endif %}{% else %}<cys-form-item
+          :label="{{ item.label }}"
+          :label-width="'80px'">{% endif %}{% if item.type === 'input' %}<cys-input :clearable="true" v-model="{{key}}.options[{{ loop.index - 1 }}].value" :placeholder="'请输入{{ item.label }}'"></cys-input>{% elif item.type === 'select' %}<cys-select v-model="{{key}}.options[{{ loop.index - 1 }}].value" :clearable="true" :placeholder="'请输入{{ item.label }}'"></cys-select>{% elif item.type === 'date' and item.type === 'daterange' and item.type === 'datetimerange' and item.type === 'month' and item.type === 'year' and item.type === 'time' %}<cys-date-picker :type="item.type" :filter="true" :clearable="true" v-model="{{key}}.options[{{ loop.index - 1 }}].value" placeholder="请输入内容"></cys-date-picker>
+        {% elif item.type === 'cascader' %}<cys-cascader
+            v-model="{{key}}.options[{{ loop.index - 1 }}].value"
+            :options="item.options"
+            :clearable="true"
+            :filter="true"
+            :placeholder="'请选择{{ item.label }}'"
+        ></cys-cascader>{% elif item.type === 'textarea' %}<cys-input type="textarea" v-model="{{key}}.options[{{ loop.index - 1 }}].value" :clearable="true" :placeholder="'请输入{{ item.label }}'"></cys-input>{% elif item.type === 'radio' %}<cys-radio-group v-model="{{key}}.options[{{ loop.index - 1 }}].value">
+          <cys-option
+            v-for="(item, ii3) in item.options"
+            :key="ii3"
+            :label="item.label"
+            :value="item.value">
+          </cys-option>
+        </cys-radio-group>{% elif item.type === 'checkbox' %}<cys-checkbox-group v-model="{{key}}.options[{{ loop.index - 1 }}].value">
+          <cys-checkbox :key="ii2" v-for="(item2, ii2) in item.options" :label="item2.value">{{ item2.label }}</cys-checkbox>
+        </cys-checkbox-group>{% endif %}
+      </cys-form-item>
+      {%- endfor %}
+    </cys-form>
+    <span slot="footer">
+    {% for key, item in o.btns %}{%if key === 'reset' %}<cys-button plain>{{item.label}}</cys-button>{% else %}<cys-button @click="{{item.fn}}">{{item.label}}</cys-button>{% endif %}
+    {%- endfor %}
+    </span>
+</cys-modal>
